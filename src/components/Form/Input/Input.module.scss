@@ -1,0 +1,16 @@
+@use "../../../styles/colors" as c;
+@use "../../../styles/fonts" as f;
+
+input {
+  font-size: 1em;
+  font-family: "Vazirmatn", sans-serif;
+  width: 400px;
+  margin: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  &:focus {
+    outline: none;
+    border: 1px grey solid;
+  }
+}

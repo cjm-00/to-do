@@ -1,0 +1,19 @@
+@use "../../styles/colors" as c;
+@use "../../styles/fonts" as f;
+
+Button {
+  color: c.$isabelline;
+  font-family: "Vazirmatn", sans-serif;
+  font-weight: 700;
+
+  font-size: 1.1em;
+  padding: 8px 10px;
+  margin: 8px;
+  border: none;
+  border-radius: 5px;
+  background-color: c.$oxford-blue;
+  &:hover {
+    transform: scale(1.02);
+    background-color: #212055;
+  }
+}

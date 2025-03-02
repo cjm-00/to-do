@@ -1,0 +1,25 @@
+@use "../../styles/colors" as c;
+@use "../../styles/fonts" as f;
+
+.taskContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.clone {
+  width: 30px;
+  padding: 10px;
+  &:hover {
+    transform: scale(1.01);
+  }
+}
+
+.check {
+  margin: none;
+  height: 25px;
+  width: 25px;
+  background-color: c.$powder-blue;
+}

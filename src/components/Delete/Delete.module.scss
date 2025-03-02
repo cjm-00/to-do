@@ -1,0 +1,18 @@
+@use "../../styles/colors" as c;
+@use "../../styles/fonts" as f;
+
+.delete {
+  color: c.$mint-cream;
+  font-family: "Vazirmatn", sans-serif;
+  font-weight: 700;
+  font-size: 1.1em;
+  padding: 4px 10px;
+  margin: none;
+  border: none;
+  border-radius: 5px;
+  background-color: c.$bittersweet;
+  &:hover {
+    transform: scale(1.02);
+    background-color: #74352d;
+  }
+}
