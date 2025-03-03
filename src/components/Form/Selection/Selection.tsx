@@ -1,6 +1,6 @@
 import classes from "./Selection.module.scss";
 
-export default function Selection({ defaultValue }) {
+export default function Selection({ defaultValue }: { defaultValue: any }) {
   return (
     <select className={classes.select} defaultValue={defaultValue}>
       <option value={"Cleaning"}>Cleaning</option>
