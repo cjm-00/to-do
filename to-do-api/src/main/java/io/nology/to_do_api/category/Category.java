@@ -21,13 +21,36 @@ public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false)
-    private Integer id;
+    private Long id;
 
     @Column
     private String category;
 
-    @OneToMany(mappedBy = "category")
-    private List<Task> tasks = new ArrayList<>();
+    // @OneToMany(mappedBy = "category")
+    // private List<Task> tasks = new ArrayList<>();
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    // public List<Task> getTasks() {
+    // return tasks;
+    // }
+
+    // public void setTasks(List<Task> tasks) {
+    // this.tasks = tasks;
+    // }
 
 }

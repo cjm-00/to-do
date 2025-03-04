@@ -22,7 +22,7 @@ public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    private Integer id;
+    private Long id;
 
     @Column
     private String task;
@@ -37,10 +37,19 @@ public class Task {
 
     public Task(String task) {
         this.task = task;
+
     }
 
-    @ManyToOne
-    @JoinColumn(name = "category_id")
-    private Category category;
+    public Task() {
+        // no args constructor for JPA
+    }
+
+    // @ManyToOne
+    // @JoinColumn(name = "category_id")
+    // private Category category;
+
+    // public void setCategory(Category category) {
+    // this.category = category;
+    // }
 
 }
