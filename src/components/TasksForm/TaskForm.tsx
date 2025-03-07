@@ -3,7 +3,7 @@ import { getTasks } from "../../services/task-services";
 import Button from "../Button/Button";
 import Task from "../Task/Task";
 import classes from "./TaskForm.module.scss";
-import Selection from "../Form/Selection/Selection";
+import NewTaskForm from "../NewTaskForm/NewTaskForm";
 
 export default function TaskForm() {
   const [tasksData, setTasksData] = useState([]);
@@ -23,15 +23,7 @@ export default function TaskForm() {
           <Button type={"button"}>Edit Categories</Button>
         </div>
       </div>
-
-      <form className={classes.newTask}>
-        <input
-          defaultValue={"Type Here..."}
-          className={classes.newTextInput}
-        ></input>
-        <Selection defaultValue={"Cleaning"}></Selection>
-        <Button type={"submit"}>Add Task</Button>
-      </form>
+      <NewTaskForm tasksData={tasksData} />
     </div>
   );
 }

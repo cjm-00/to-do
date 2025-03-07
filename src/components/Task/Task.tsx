@@ -12,7 +12,9 @@ export default function Task({ data }) {
       <Input defaultValue={data.task}></Input>
       <Selection defaultValue={data.category} />
 
-      <img src={clone} className={classes.clone} />
+      <button className={classes.cloneBase}>
+        <img src={clone} className={classes.clone} />
+      </button>
 
       <Delete />
     </div>

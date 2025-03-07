@@ -12,6 +12,8 @@ Button {
   border: none;
   border-radius: 5px;
   background-color: c.$oxford-blue;
+  box-shadow: 2px 2px 3px rgba(128, 128, 128, 0.541);
+
   &:hover {
     transform: scale(1.02);
     background-color: #212055;

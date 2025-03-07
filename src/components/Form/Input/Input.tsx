@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import classes from "./Input.module.scss";
 
 export default function Input({ defaultValue }) {
@@ -6,6 +6,11 @@ export default function Input({ defaultValue }) {
   const handleChange = (event) => {
     setValue(event.target.value);
   };
+
+  useEffect(() => {
+    console.log(updatedValue);
+  }, [updatedValue]);
+
   return (
     <input
       className={classes.input}
