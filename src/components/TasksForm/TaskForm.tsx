@@ -1,12 +1,22 @@
 import { useEffect, useState } from "react";
-import { getTasks } from "../../services/task-services";
-import Button from "../Button/Button";
+import { getTasks, TaskEntity, updateTask } from "../../services/task-services";
 import Task from "../Task/Task";
 import classes from "./TaskForm.module.scss";
 import NewTaskForm from "../NewTaskForm/NewTaskForm";
 
 export default function TaskForm() {
-  const [tasksData, setTasksData] = useState([]);
+  const [tasksData, setTasksData] = useState<TaskEntity[]>([]);
+
+  const runUpdate = async (
+    updatedTaskDesc: string,
+    updatedTaskCat: string,
+    id: number
+  ) => {
+    const data = { task: updatedTaskDesc, category: updatedTaskCat };
+    await updateTask(id, data);
+    const updatedTaskList = await getTasks();
+    setTasksData(updatedTaskList);
+  };
 
   useEffect(() => {
     getTasks().then((data) => setTasksData(data));
@@ -16,14 +26,15 @@ export default function TaskForm() {
     <div className={classes.formPage}>
       <div className={classes.tasksContainer}>
         {tasksData.map((task) => (
-          <Task data={task} key={task.id} />
+          <Task
+            data={task}
+            key={task.id}
+            runUpdate={runUpdate}
+            setTasksData={setTasksData}
+          />
         ))}
-        <div className={classes.buttonContainer}>
-          <Button type={"submit"}>Confirm Changes</Button>
-          <Button type={"button"}>Edit Categories</Button>
-        </div>
       </div>
-      <NewTaskForm tasksData={tasksData} />
+      <NewTaskForm tasksData={tasksData} setTasksData={setTasksData} />
     </div>
   );
 }

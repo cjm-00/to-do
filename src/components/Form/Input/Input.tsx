@@ -1,21 +1,20 @@
-import { useEffect, useState } from "react";
 import classes from "./Input.module.scss";
 
-export default function Input({ defaultValue }) {
-  const [updatedValue, setValue] = useState(defaultValue);
-  const handleChange = (event) => {
-    setValue(event.target.value);
-  };
-
-  useEffect(() => {
-    console.log(updatedValue);
-  }, [updatedValue]);
-
+export default function Input({
+  name,
+  onChange,
+  value,
+}: {
+  name: string;
+  onChange: any;
+  value: string;
+}) {
   return (
     <input
+      name={name}
+      value={value}
       className={classes.input}
-      defaultValue={updatedValue}
-      onChange={handleChange}
-    ></input>
+      onChange={onChange}
+    />
   );
 }

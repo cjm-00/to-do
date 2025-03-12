@@ -3,6 +3,8 @@
 
 .header {
   background-color: c.$oxford-blue;
+  display: flex;
+  align-items: center;
 }
 .heading {
   text-align: left;
@@ -10,6 +12,6 @@
   color: c.$isabelline;
   font-family: "Staatliches", sans-serif;
   font-size: 4em;
-  margin: auto;
+  margin: 0px;
   padding: 20px 40px;
 }
